@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import reset from "react-style-reset/string";
+import reset from "styled-reset";
 
 export const GlobalStyle = createGlobalStyle`
     ${reset};
@@ -17,11 +17,13 @@ export const GlobalStyle = createGlobalStyle`
         --Grey-4:#121214;
         
         --Sucess:#3FE864;
-        --Negative:#E83F5B;       
+        --Negative:#E83F5B;
+
+        --color-primary-Disable:#59323F;
 
     }
 
-    @media(min-width: 700px;) {
+    @media(min-width:700px) {
         :root {
             font-size: 62.5%;
         };
@@ -35,6 +37,10 @@ export const GlobalStyle = createGlobalStyle`
 
     body{
         background-color: var(--Grey-4);
+    }
+
+    button {
+        cursor: pointer;
     }
 
 `;

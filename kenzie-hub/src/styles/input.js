@@ -6,6 +6,7 @@ export const StyleInput = styled.fieldset`
   gap: 1rem;
   width: 100%;
   box-sizing: border-box;
+  padding: 0px;
 
   label {
     font-size: 12.18;
@@ -22,5 +23,11 @@ export const StyleInput = styled.fieldset`
     padding-left: 16.4px;
     background-color: var(--Grey-2);
     color: var(--Grey-1);
+
+  }
+  p {
+    padding: 0px;
+    color: var(--Negative);
+    font-size: 12px;
   }
 `;

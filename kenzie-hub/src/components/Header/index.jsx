@@ -1,4 +1,4 @@
-import { Back } from "../back";
+import { Back } from "../Back";
 import Logo from "../../assets/Logo.png";
 import { StyleHeader } from "../../styles/header";
 

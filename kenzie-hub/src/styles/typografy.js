@@ -22,7 +22,7 @@ export const StyleTitle2 = styled.h2`
 export const StyleTitle3 = styled.h3`
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
 `;
 
 export const StyleHeadline = styled.h4`
@@ -40,6 +40,6 @@ export const StyleHeadlineBold = styled.h5`
 export const StyleHeadlineItalic = styled.h6`
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-style: italic
+    font-style: italic;
     font-size: 12px;
 `;

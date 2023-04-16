@@ -26,7 +26,7 @@ export const StyleHeaderRegister = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 370px;
+  max-width: 370px;
   padding: 50px;
   margin: 0 auto;
   color: var(--Grey-0);
@@ -51,12 +51,16 @@ export const StyleHeaderRegister = styled.header`
     color: var(--Grey-0);
     border-radius: 4px;
     transition: 0.5s ease;
-    cursor: pointer;
 
     :hover {
       background-color: var(--Grey-2);
     }
   }
+
+  @media(min-width:320px) {
+    padding: 50px 18px;
+  }
+
 `;
 
 export const StyleHeaderDashobard = styled.header`
@@ -67,7 +71,7 @@ export const StyleHeaderDashobard = styled.header`
   margin: 0 auto;
   color: var(--Grey-0);
 
-  nav {
+  div {
     width: 700px;
     display: flex;
     justify-content: space-between;
@@ -79,7 +83,8 @@ export const StyleHeaderDashobard = styled.header`
     height: 32px;
     background-color: var(--Grey-3);
     color: var(--Grey-0);
-    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.5s ease;
 
     :hover {
       background-color: var(--Grey-2);

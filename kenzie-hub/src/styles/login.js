@@ -7,16 +7,22 @@ export const StyleLogin = styled.div`
   max-width: 369px;
   margin: 0 auto;
   gap: 2rem;
-  padding: 22px 0;
+  padding: 32px 20px 20px 20px;
   border-radius: 4px;
   font-family: "Inter", sans-serif;
   background-color: var(--Grey-3);
   color: var(--Grey-0);
+  margin-bottom: 5rem;
+
+  h1 {
+    padding: 10px;
+  }
 
   form {
     display: flex;
     flex-direction: column;
     gap: 22px;
+    width: 100%;
 
     input {
       color: var(--Grey-0);
@@ -33,6 +39,7 @@ export const StyleLogin = styled.div`
       margin-top: 0.5rem;
       font-size: 16px;
       font-weight: 600;
+      width: 100%;
     }
   }
 
@@ -64,11 +71,20 @@ export const StyleLogin = styled.div`
       color: var(--Grey-0);
       text-decoration: none;
       transition: 0.5s ease;
+      width: 100%;
       cursor: pointer;
 
       :hover {
         background-color: var(--Grey-2);
       }
     }
+  }
+
+  @media (min-width: 320px) {
+    width: 80%;
+  }
+
+  @media (min-width: 375px) {
+    max-width: 319px;
   }
 `;

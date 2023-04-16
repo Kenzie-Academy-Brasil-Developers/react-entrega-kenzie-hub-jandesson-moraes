@@ -1,15 +1,25 @@
 import { Route, Routes } from "react-router-dom";
-import { PageDashboard } from "../pages/dashboard";
-import { PageLogin } from "../pages/login";
-import { RegisterPage } from "../pages/register";
+import { PageDashboard } from "../Pages/dashboard";
+import { PageLogin } from "../Pages/login";
+import { RegisterPage } from "../Pages/register";
+import { ProtectedRoutes } from "../components/ProtectedRoutes";
+import { TechProvider } from "../providers/techContext";
 
 export const RoutesMain = () => {
   return (
       <Routes>
+
+
         <Route path="/" element={<PageLogin />} />
-        <Route path="/login" element={<PageLogin />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/dashboard" element={<PageDashboard />} />
+
+        <Route element={<ProtectedRoutes />} >
+          <Route path="/dashboard" element={<TechProvider> < PageDashboard /> </TechProvider>} />
+        </Route>
+
+
       </Routes>
   );
 };
+
+
