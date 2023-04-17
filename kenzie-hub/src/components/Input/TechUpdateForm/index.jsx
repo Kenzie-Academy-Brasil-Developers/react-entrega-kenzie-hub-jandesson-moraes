@@ -7,44 +7,44 @@ import { Inputs } from "..";
 import { StyleTitle3 } from "../../../styles/typografy";
 
 export const TechUpdateForm = () => {
-  const { editTech, setEditTech, updateTech, removeTech } =
-    useContext(TechContext);
-
-  const [disabled, setDisabled] = useState(false);
+  const {
+    removeTech,
+    edintingTech,
+    setEditingTech,
+    editTech, setEditTech,
+    updateTech,
+  } = useContext(TechContext);
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
-      status: editTech.status,
+      status: edintingTech.status,
     },
   });
 
-  const submit = (data) => {
-    updateTech(data, editTech.id);
+  const submit = (formData) => {
+    updateTech(formData, edintingTech.id);
   };
 
-  const clickDisabled = () => {
-    setDisabled(true);
-  };
 
   return (
     <StyleModalUpdate>
       <div role="dialog">
         <nav>
           <StyleTitle3>Tecnologia Detalhes</StyleTitle3>
-          <button onClick={() => setEditTech(null)}>X</button>
+          <button onClick={() => setEditingTech(null)}>X</button>
         </nav>
         <form onSubmit={handleSubmit(submit)}>
-          <h2>{editTech.title}</h2>
-          <Inputs
+          <h2>{edintingTech.title}</h2>
+
+          <label>Nome do projeto</label>
+          <input
             type="text"
-            id="title"
-            label="Nome do projeto"
-            placeholder={editTech.title}
-            register={register("title")}
+            placeholder={edintingTech.title}
+            {...register("title")}
           />
 
           <label> Status </label>
-          <Select id="status" register={register("status")}>
+          <Select {...register("status")}>
             <option value="">Selecionar nível</option>
             <option value="iniciante">Iniciante</option>
             <option value="intermediário">Intermediário</option>
@@ -55,9 +55,9 @@ export const TechUpdateForm = () => {
             <button className="btn-1" type="submit">
               Salvar alterações
             </button>
-            <button
+            <button type="submit"
               className="btn-2"
-              onClick={() => [removeTech(editTech.id), setEditTech(null)]}>
+              onClick={() => [removeTech(edintingTech.id), setEditingTech(null)]}>
               Excluir
             </button>
           </div>

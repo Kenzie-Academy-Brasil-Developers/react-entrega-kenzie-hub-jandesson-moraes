@@ -7,7 +7,7 @@ export const TechContext = createContext({});
 export const TechProvider = ({ children }) => {
   const [tech, setTech] = useState([]);
   const [editTech, setEditTech] = useState(true);
-  // const [edint]
+  const [edintingTech, setEditingTech] = useState(null);
   const [createTech, setCreateTech] = useState(null);
   const [isCreateTechModal, setIsCreateTechModal] = useState(false);
 
@@ -31,10 +31,10 @@ export const TechProvider = ({ children }) => {
     }
   }, []);
 
-  const techCreate = async (data) => {
+  const techCreate = async (formData) => {
     try {
       const token = localStorage.getItem("@TOKEN");
-      const response = await api.post("/users/techs", data, {
+      const response = await api.post("/users/techs", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -47,10 +47,10 @@ export const TechProvider = ({ children }) => {
     }
   };
 
-  const updateTech = async (data, techId) => {
+  const updateTech = async (formData, techId) => {
     try {
       const token = localStorage.getItem("@TOKEN");
-      const {data} = await api.put(`/users/techs/${techId}}`, formData, {
+      await api.put(`/users/works/${techId}}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -59,7 +59,7 @@ export const TechProvider = ({ children }) => {
       toast.success("Tecnologia atualizada com sucesso!");
 
       const newUpdate = tech.map((techs) => {
-        if (techId === techs.id) {
+        if (techId.id === techId) {
           return { ...techs, ...formData };
         } else {
           return techs;
@@ -74,7 +74,7 @@ export const TechProvider = ({ children }) => {
   const removeTech = async (techId) => {
     try {
       const token = localStorage.getItem("@TOKEN");
-      const response = await api.delete(`/users/techs/${techId}}`, {
+      await api.delete(`/users/techs/${techId}}`, {
         headers: {
           Authorization: `Bearer${token}`,
         },
@@ -96,12 +96,14 @@ export const TechProvider = ({ children }) => {
         createTech,
         techCreate,
         setCreateTech,
-        editTech,
-        setEditTech,
         updateTech,
         removeTech,
         isCreateTechModal,
         setIsCreateTechModal,
+        editTech,
+        setEditTech,
+        edintingTech,
+        setEditingTech,
       }}>
       {children}
     </TechContext.Provider>

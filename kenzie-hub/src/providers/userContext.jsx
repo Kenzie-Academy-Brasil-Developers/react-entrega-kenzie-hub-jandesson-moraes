@@ -42,7 +42,7 @@ export const UserProvider = ({ children }) => {
       setUser(useResponse);
       navigate("/dashboard");
     } catch (error) {
-      toast.error(error);
+      toast.error("Ops! Algo deu errado");
     } finally {
       setLoading(false);
     }

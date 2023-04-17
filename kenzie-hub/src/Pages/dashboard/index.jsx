@@ -22,6 +22,8 @@ export const PageDashboard = () => {
     setEditTech,
     isCreateTechModal,
     setIsCreateTechModal,
+    edintingTech,
+    setEditingTech,
   } = useContext(TechContext);
 
   useEffect(() => {
@@ -46,7 +48,7 @@ export const PageDashboard = () => {
 
   return (
     <>
-      {editTech ? <TechUpdateForm /> : null}
+      {edintingTech ? <TechUpdateForm /> : null}
       {isCreateTechModal ? <TechCreateForm /> : null}
       <ToastContainer />
       <StyleHeaderDashobard>
@@ -77,7 +79,7 @@ export const PageDashboard = () => {
                   <CardTecnologies
                     key={profile.id}
                     profile={profile}
-                    onClick={() => setEditTech(profile)}
+                    setEditingTech={setEditingTech}
                   />
                 ))}
               </ul>

@@ -26,6 +26,7 @@ export const StyleLogin = styled.div`
 
     input {
       color: var(--Grey-0);
+      padding: 0 12px;
     }
 
     label {
