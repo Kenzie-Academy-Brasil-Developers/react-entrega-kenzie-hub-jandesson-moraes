@@ -11,14 +11,18 @@ export const StyleDashboardSection = styled.div`
 
   nav {
     display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
     justify-content: space-between;
     height: 118px;
     width: 100%;
     border-top: 1px solid var(--Grey-3);
-    border-bottom: 1px solid var(--Grey-3);
+
     div {
+      padding: 0 13px;
       width: 700px;
+      width: 100%;
+      margin: 0 auto;
       p {
         color: var(--Grey-1);
       }
@@ -26,18 +30,23 @@ export const StyleDashboardSection = styled.div`
   }
 
   div {
-    width: 700px;
+    border-bottom: 1px solid var(--Grey-3);
     display: flex;
     align-items: center;
     height: 118px;
     margin: 0 auto;
     justify-content: space-between;
+    max-width: 700px;
+    width: 100%;
+    padding: 0 13px;
+    margin: 0;
+    box-sizing: border-box;
   }
 
   section {
     display: flex;
     width: 100%;
-    width: 700px;
+    max-width: 700px;
     margin: 0 auto;
     flex-direction: column;
 
@@ -62,7 +71,7 @@ export const StyleDashboardSection = styled.div`
       display: flex;
       flex-direction: column;
       max-width: 100%;
-      padding: 26px;
+      padding: 26px 12px;
       background-color: var(--Grey-3);
       gap: 16px;
       border-radius: 4px;
@@ -72,7 +81,7 @@ export const StyleDashboardSection = styled.div`
         justify-content: space-between;
         align-items: center;
         height: 49px;
-        padding: 0 22px;
+        padding: 0 13px;
         border-radius: 4px;
         background-color: var(--Grey-4);
         transition: 0.5s ease;
@@ -85,6 +94,26 @@ export const StyleDashboardSection = styled.div`
         :hover {
           background-color: var(--Grey-2);
         }
+      }
+    }
+  }
+
+  @media (min-width: 320px) {
+    nav {
+      div {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    nav {
+      div {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
     }
   }

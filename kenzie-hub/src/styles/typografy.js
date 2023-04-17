@@ -29,6 +29,7 @@ export const StyleHeadline = styled.h4`
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 12px;
+  color: var(--Grey-1);
 `;
 
 export const StyleHeadlineBold = styled.h5`

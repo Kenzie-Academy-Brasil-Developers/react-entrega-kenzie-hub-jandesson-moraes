@@ -7,6 +7,7 @@ export const TechContext = createContext({});
 export const TechProvider = ({ children }) => {
   const [tech, setTech] = useState([]);
   const [editTech, setEditTech] = useState(true);
+  // const [edint]
   const [createTech, setCreateTech] = useState(null);
   const [isCreateTechModal, setIsCreateTechModal] = useState(false);
 
@@ -49,7 +50,7 @@ export const TechProvider = ({ children }) => {
   const updateTech = async (data, techId) => {
     try {
       const token = localStorage.getItem("@TOKEN");
-      const response = await api.put(`/users/techs/${techId}}`, data, {
+      const {data} = await api.put(`/users/techs/${techId}}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -59,7 +60,7 @@ export const TechProvider = ({ children }) => {
 
       const newUpdate = tech.map((techs) => {
         if (techId === techs.id) {
-          return { ...techs, ...data };
+          return { ...techs, ...formData };
         } else {
           return techs;
         }

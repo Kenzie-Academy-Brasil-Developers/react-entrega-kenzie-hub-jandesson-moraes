@@ -1,10 +1,10 @@
 import { Navigate } from "react-router-dom";
-import { StyleHeadline, StyleTitle2 } from "../../styles/typografy";
+import { StyleTitle2, StyleTitle3 } from "../../styles/typografy";
 import Logo from "../../assets/Logo.png";
 import { TiPlus } from "react-icons/ti";
 import { StyleHeaderDashobard } from "../../styles/header";
 import { ToastContainer } from "react-toastify";
-import { StyleDashboardSection } from "../../styles/sections";
+import { StyleDashboardSection } from "../../styles/dashbard";
 import { api } from "../../services";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../providers/userContext";
@@ -12,6 +12,7 @@ import { TechContext } from "../../providers/techContext";
 import { CardTecnologies } from "../../components/TecnologUser";
 import { TechCreateForm } from "../../components/Input/DashboardForm";
 import { TechUpdateForm } from "../../components/Input/TechUpdateForm";
+import { StyleHeadline } from "../../styles/typografy";
 
 export const PageDashboard = () => {
   const { user, loading, logout } = useContext(UserContext);
@@ -60,7 +61,7 @@ export const PageDashboard = () => {
         <nav>
           <div>
             <StyleTitle2>Olá, {user.name}</StyleTitle2>
-            <p>{user.course_module}</p>
+            <StyleHeadline>{user.course_module}</StyleHeadline>
           </div>
         </nav>
         <section className="section2">

@@ -66,10 +66,11 @@ export const StyleHeaderRegister = styled.header`
 export const StyleHeaderDashobard = styled.header`
   display: flex;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
   height: 72px;
   margin: 0 auto;
   color: var(--Grey-0);
+  padding: 0 13px;
 
   div {
     width: 700px;
