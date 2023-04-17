@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyleModalUpdate = styled.div`
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   color: var(--Grey-0);
   font-family: "Inter", sans-serif;
   display: flex;
@@ -11,13 +11,10 @@ export const StyleModalUpdate = styled.div`
   z-index: 1;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
-  margin: 0 auto;
-  padding: 0;
-
+  
   div {
     display: flex;
     flex-direction: column;
-    width: 369px;
     max-height: 100%;
     border-radius: 4px;
     background-color: var(--Grey-3);
@@ -28,9 +25,9 @@ export const StyleModalUpdate = styled.div`
       justify-content: space-between;
       height: 50px;
       background-color: var(--Grey-2);
-      padding: 0 16.24px;
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
+      padding: 0 12px;
 
       button {
         color: var(--Grey-1);
@@ -47,20 +44,23 @@ export const StyleModalUpdate = styled.div`
       flex-direction: column;
       gap: 1.5rem;
       font-size: 12.18px;
-      padding: 5px 20px;
       padding-bottom: 1rem;
+      margin: 0 auto;
+      width: 269px;
+      padding: 0 12px;
 
       fieldset {
         gap: 1.8rem;
       }
 
       input {
-        padding: 0 16.24px;
+        /* padding: 0 12px; */
+
+        /* width: 100%; */
       }
 
       select {
         height: 48px;
-        margin: 0;
         font-size: 16.24px;
         font-weight: 400;
         background-color: var(--Grey-2);
@@ -73,13 +73,13 @@ export const StyleModalUpdate = styled.div`
       div {
         display: flex;
         flex-direction: row;
-        max-width: 100%;
         height: 100%;
         justify-content: space-between;
         padding-bottom: 2rem;
+        gap: 1.0994rem;
 
         .btn-1 {
-          width: 204px;
+          width: 12.75rem;
           padding: 0px, 22px, 0px, 22px;
           height: 48px;
           border-radius: 4.06px;

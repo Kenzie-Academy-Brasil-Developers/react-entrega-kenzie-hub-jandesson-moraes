@@ -49,7 +49,8 @@ export const StyleDashboardSection = styled.div`
     max-width: 700px;
     margin: 0 auto;
     flex-direction: column;
-
+    /* padding: 0 12px; */
+    
     div {
       button {
         display: flex;
@@ -72,6 +73,7 @@ export const StyleDashboardSection = styled.div`
       flex-direction: column;
       max-width: 100%;
       padding: 26px 12px;
+      margin: 0 12px;
       background-color: var(--Grey-3);
       gap: 16px;
       border-radius: 4px;
@@ -114,6 +116,11 @@ export const StyleDashboardSection = styled.div`
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+      }
+    }
+    section {
+      ul {
+        margin: 0;
       }
     }
   }
