@@ -8,7 +8,6 @@ export const StyleDashboardSection = styled.div`
   color: var(--Grey-0);
   font-family: "Inter", sans-serif;
   border: var(--Grey-1);
-  border: 1px solid red;
 
   nav {
     display: flex;

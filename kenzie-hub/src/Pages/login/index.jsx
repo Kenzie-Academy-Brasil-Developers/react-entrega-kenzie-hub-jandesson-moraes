@@ -24,23 +24,6 @@ export const PageLogin = () => {
     resolver: zodResolver(schemaLogin),
   });
 
-  // const loginForm = async (data) => {
-  //   try {
-  //     setLoading(true)
-  //     const response = await api.post("/sessions", data);
-  //     setUser(response.data.user);
-  //     localStorage.setItem("@token", response.data.token);
-  //     toast.success(`Usuario ${response.data.user.name} logado com sucesso!`);
-  //     setTimeout(() => {
-  //       navegate("/dashboard/:id");
-  //     }, 4990);
-  //   } catch (error) {
-  //     toast.error("Ops! Algo deu errado");
-  //   } finally {
-  //     setLoading(false)
-  //   }
-  // };
-
   return (
     <>
       <ToastContainer />

@@ -26,7 +26,6 @@ export const RegisterPage = () => {
     try {
       setloading(true)
       const response = await api.post("/users", formData);
-      console.log(response.data)
       toast.success("Conta criada com sucesso!");
 
       setTimeout(() => {        

@@ -10,7 +10,6 @@ export const TechProvider = ({ children }) => {
   const [createTech, setCreateTech] = useState(null);
   const [isCreateTechModal, setIsCreateTechModal] = useState(false);
 
-
   useEffect(() => {
     const token = localStorage.getItem("@TOKEN");
     if (token) {
@@ -43,7 +42,6 @@ export const TechProvider = ({ children }) => {
       toast.success("Tecnologia criada com sucesso!");
       setTech([...tech, response.data]);
     } catch (error) {
-      console.log(error);
       toast.error("Ops! Algo deu errado!");
     }
   };
@@ -68,7 +66,6 @@ export const TechProvider = ({ children }) => {
       });
       setTech(newUpdate);
     } catch (error) {
-      console.log(error);
       toast.error("Ops! algo deu errado!");
     }
   };
@@ -84,10 +81,9 @@ export const TechProvider = ({ children }) => {
 
       toast.success("Tecnologia removida com sucesso!");
       const newTech = tech.filter((techs) => techs.id !== techId);
-
       setTech(newTech);
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   };
 
