@@ -8,7 +8,6 @@ export const StyleButton = styled.button`
   background-color: var(--Color-primary);
   color: var(--Grey-0);
   transition: 0.5s ease;
-  cursor: pointer;
 
   :hover {
     background-color: var(--Color-primary-Focus);

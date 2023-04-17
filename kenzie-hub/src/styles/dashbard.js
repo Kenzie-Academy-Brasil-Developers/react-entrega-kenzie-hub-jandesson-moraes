@@ -49,8 +49,7 @@ export const StyleDashboardSection = styled.div`
     max-width: 700px;
     margin: 0 auto;
     flex-direction: column;
-    /* padding: 0 12px; */
-    
+
     div {
       button {
         display: flex;
